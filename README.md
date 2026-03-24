@@ -89,12 +89,12 @@ riscv-pipelined-cpu/
 │
 ├── test/
 │   ├── top_cpu_tb.v                  # Simulation testbench
-│   ├── program.s                     # Example RISC-V assembly program
-│   ├── program.hex                   # Assembled machine code
+│   ├── fibonacci.s                     # Example RISC-V assembly program
+│   ├── fibonacci.hex                   # Assembled machine code
 │   └── top_cpu.vcd                   # Simulation waveform output
 │
 ├── examples/
-│    └── sample_program.s              # Additional example programs
+│    └── factorial.s              # Additional example programs
 │
 └── Lab_Report.pdf
 
@@ -362,7 +362,7 @@ cd riscv-pipelined-cpu
 An example program is provided at `test/program.s`. To assemble it:
 
 ```bash
-python assembler/assembler.py test/program.s test/program.hex
+python assembler/assembler.py test/fibonacci.s test/fibonacci.hex
 ```
 
 ### Step 3 — Compile All Verilog Sources
