@@ -1,0 +1,20 @@
+000100b7   // lui   x1, 0x10        -> Load upper immediate (base memory address)
+00a00113   // addi  x2, x0, 10      -> x2 = 10 (loop count / limit)
+01400193   // addi  x3, x0, 20      -> x3 = 20 (initial value / bound)
+
+02310233   // add   x4, x2, x3      -> x4 = x2 + x3 (Fibonacci step)
+022242b3   // add   x5, x4, x2      -> x5 = x4 + x2
+02326333   // add   x6, x4, x3      -> x6 = x4 + x3
+
+00628c63   // beq   x5, x6, label   -> Branch if equal (loop control)
+
+0000a383   // lw    x7, 0(x1)       -> Load value from memory
+00138393   // addi  x7, x7, 1       -> Increment value
+
+0070a023   // sw    x7, 0(x1)       -> Store updated value back
+
+0f00000f   // fence                 -> Memory ordering (NOP in this design)
+fe1ff06f   // jal   x0, loop        -> Jump back to loop (infinite loop)
+
+0000100f   // fence.i               -> Instruction fence (NOP)
+00000513   // addi  x10, x0, 0      -> x10 = 0 (termination / result placeholder)
