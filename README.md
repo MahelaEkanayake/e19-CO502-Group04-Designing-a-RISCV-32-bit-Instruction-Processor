@@ -398,7 +398,7 @@ gtkwave test/top_cpu.vcd
 > ```verilog
 > initial begin
 >     $dumpfile("test/top_cpu.vcd");
->     $dumpvars(0, test/top_cpu_tb);
+>     $dumpvars(0, top_cpu_tb);
 > end
 > ```
 
