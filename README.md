@@ -370,7 +370,7 @@ python assembler/assembler.py test/fibonacci.s test/fibonacci.hex
 ### Step 3 — Compile All Verilog Sources
 
 ```bash
-iverilog -o cpu_sim \
+iverilog -o test/cpu_sim \
   src/fetch/*.v \
   src/decode/*.v \
   src/execute/*.v \
@@ -385,20 +385,20 @@ iverilog -o cpu_sim \
 ### Step 4 — Run the Simulation
 
 ```bash
-vvp cpu_sim
+vvp test/cpu_sim
 ```
 
 ### Step 5 — View the Waveform
 
 ```bash
-gtkwave top_cpu.vcd
+gtkwave test/top_cpu.vcd
 ```
 
 > ⚠️ **Note:** Ensure your testbench (`top_cpu_tb.v`) contains the following for waveform generation:
 > ```verilog
 > initial begin
->     $dumpfile("top_cpu.vcd");
->     $dumpvars(0, top_cpu_tb);
+>     $dumpfile("test/top_cpu.vcd");
+>     $dumpvars(0, test/top_cpu_tb);
 > end
 > ```
 
