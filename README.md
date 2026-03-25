@@ -149,8 +149,8 @@ A data hazard occurs when an instruction **depends on the result of a previous i
 #### 📌 Example
 
 ```assembly
-add x1, x2, x3    # x1 is written in WB (cycle 5)
-sub x4, x1, x5    # x1 is needed in EX (cycle 4) — NOT YET READY
+add x1, x2, x3    // x1 is written in WB (cycle 5)
+sub x4, x1, x5    // x1 is needed in EX (cycle 4) — NOT YET READY
 ```
 
 Without any mitigation, `sub` would read a **stale (incorrect) value** of `x1` from the register file.
@@ -189,8 +189,8 @@ A load-use hazard is a **special case of a data hazard** that forwarding alone c
 #### 📌 Example
 
 ```assembly
-lw  x1, 0(x2)     # x1 loaded from memory — result ready after MEM
-add x3, x1, x4    # x1 needed in EX — but MEM hasn't happened yet
+lw  x1, 0(x2)     // x1 loaded from memory — result ready after MEM
+add x3, x1, x4    // x1 needed in EX — but MEM hasn't happened yet
 ```
 
 Even with forwarding, there is a **one-cycle gap** that cannot be bridged.
@@ -225,8 +225,8 @@ A control hazard arises from **branch and jump instructions**. When a branch is 
 #### 📌 Example
 
 ```assembly
-beq x1, x2, LABEL   # branch decision resolved in EX
-add x5, x6, x7      # already fetched — may be WRONG instruction
+beq x1, x2, LABEL   // branch decision resolved in EX
+add x5, x6, x7      // already fetched — may be WRONG instruction
 ```
 
 If the branch is taken, `add` was fetched incorrectly and must not execute.
@@ -405,9 +405,9 @@ gtkwave top_cpu.vcd
 ## 🧪 Example Program
 
 ```assembly
-addi x1, x0, 5     # x1 = 5
-addi x2, x0, 10    # x2 = 10
-add  x3, x1, x2    # x3 = x1 + x2
+addi x1, x0, 5     // x1 = 5
+addi x2, x0, 10    // x2 = 10
+add  x3, x1, x2    // x3 = x1 + x2
 ```
 
 **Expected Result:**
@@ -517,10 +517,10 @@ University of Peradeniya
 
 This project demonstrates a complete CPU design workflow that mirrors real-world engineering practice:
 
-- **Architecture** — Pipeline design with hazard handling
-- **RTL Implementation** — Modular Verilog design
-- **Verification** — Testbench-driven simulation with waveform analysis
-- **Toolchain** — Custom assembler for program execution
+- **Architecture** - Pipeline design with hazard handling
+- **RTL Implementation** - Modular Verilog design
+- **Verification** - Testbench-driven simulation with waveform analysis
+- **Toolchain** - Custom assembler for program execution
 
 The design is directly relevant to roles in **ASIC design**, **FPGA development**, **computer architecture research**, and **hardware-software co-design**.
 
