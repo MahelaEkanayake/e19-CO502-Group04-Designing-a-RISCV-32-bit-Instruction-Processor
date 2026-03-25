@@ -23,7 +23,7 @@ The processor follows a classic **5-stage pipelined architecture** and incorpora
 ## 🏗️ Repository Structure
 
 ```text
-riscv-pipelined-cpu/
+e19-CO502-Group04-Designing-a-RISCV-32-bit-Instruction-Processor/
 │
 ├── README.md
 ├── LICENSE
@@ -355,8 +355,8 @@ python assembler/assembler.py test/program.s test/program.hex
 ### Step 1 — Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/riscv-pipelined-cpu.git
-cd riscv-pipelined-cpu
+git clone https://github.com/MahelaEkanayake/e19-CO502-Group04-Designing-a-RISCV-32-bit-Instruction-Processor.git
+cd e19-CO502-Group04-Designing-a-RISCV-32-bit-Instruction-Processor
 ```
 
 ### Step 2 — Write or Use an Existing Assembly Program
