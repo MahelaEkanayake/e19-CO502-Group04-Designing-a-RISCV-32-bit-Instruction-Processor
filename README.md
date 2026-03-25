@@ -126,11 +126,11 @@ The hazard-handled datapath extends the basic design with:
 
 | Stage | Module | Description |
 |-------|--------|-------------|
-| **IF** — Instruction Fetch | `Fetch_cycle.v` | Fetches instruction from memory using the Program Counter. PC is updated to PC+4 by default, or redirected on branch/jump. |
-| **ID** — Instruction Decode | `decode_cycle.v` | Decodes the instruction opcode, reads source registers from the register file, generates control signals, and sign-extends immediate values. |
-| **EX** — Execute | `execution_cycle.v` | Performs ALU operations (arithmetic, logic, comparison), calculates memory addresses for loads/stores, and evaluates branch conditions. |
-| **MEM** — Memory Access | `Mem_cycle.v` | Reads from or writes to data memory for load/store instructions. Non-memory instructions pass through unchanged. |
-| **WB** — Write Back | `WriteBack_Cycle.v` | Selects the final result (from ALU, memory, or PC+4) and writes it back to the destination register in the register file. |
+| **IF** - Instruction Fetch | `Fetch_cycle.v` | Fetches instruction from memory using the Program Counter. PC is updated to PC+4 by default, or redirected on branch/jump. |
+| **ID** - Instruction Decode | `decode_cycle.v` | Decodes the instruction opcode, reads source registers from the register file, generates control signals, and sign-extends immediate values. |
+| **EX** - Execute | `execution_cycle.v` | Performs ALU operations (arithmetic, logic, comparison), calculates memory addresses for loads/stores, and evaluates branch conditions. |
+| **MEM** - Memory Access | `Mem_cycle.v` | Reads from or writes to data memory for load/store instructions. Non-memory instructions pass through unchanged. |
+| **WB** - Write Back | `WriteBack_Cycle.v` | Selects the final result (from ALU, memory, or PC+4) and writes it back to the destination register in the register file. |
 
 ---
 
