@@ -20,7 +20,7 @@ module top_cpu_tb;
     // Waveform dump for GTKWave
     initial begin
         $dumpfile("test/top_cpu.vcd");
-        $dumpvars(0, test/top_cpu_tb);
+        $dumpvars(0, top_cpu_tb);
 
         reset = 1;
         #20;
