@@ -1,6 +1,6 @@
 # 🚀 RISC-V RV32I/M 5-Stage Pipelined Processor with Hazard Handling & Assembler
 
-> A fully functional 32-bit RISC-V pipelined processor implementing the **RV32I** base instruction set and **RV32M** (Multiply/Divide) extension, built in **Verilog HDL** — complete with hazard handling, forwarding, and a custom Python assembler toolchain.
+> A fully functional 32-bit RISC-V pipelined processor implementing the **RV32I** base instruction set and **RV32M** (Multiply/Divide) extension, built in **Verilog HDL** - complete with hazard handling, forwarding, and a custom Python assembler toolchain.
 
 ---
 
@@ -10,13 +10,13 @@ This project implements a **32-bit RISC-V processor** based on the **RV32I base 
 
 The processor follows a classic **5-stage pipelined architecture** and incorporates:
 
-- ✅ Data hazard resolution using **Forwarding (Bypassing)**
-- ✅ Load-use hazard handling using **Pipeline Stalling**
-- ✅ Control hazard handling using **Pipeline Flushing**
-- ✅ A custom **Python-based assembler** for converting assembly programs into `.hex` machine code
-- ✅ A complete **testbench** with waveform output for verification
+ - ✅ Data hazard resolution using **Forwarding (Bypassing)**
+ - ✅ Load-use hazard handling using **Pipeline Stalling**
+ - ✅ Control hazard handling using **Pipeline Flushing**
+ - ✅ A custom **Python-based assembler** for converting assembly programs into `.hex` machine code
+ - ✅ A complete **testbench** with waveform output for verification
 
-> 💡 This is a complete **hardware + software co-design system** — from writing assembly code, assembling it into machine code, executing it on a pipelined hardware processor, and verifying the result using waveform analysis.
+> 💡 This is a complete **hardware + software co-design system** - from writing assembly code, assembling it into machine code, executing it on a pipelined hardware processor, and verifying the result using waveform analysis.
 
 ---
 
@@ -75,26 +75,26 @@ riscv-pipelined-cpu/
 │   │   ├── forwarding_unit.v         # Data hazard forwarding logic
 │   │   ├── Hazard_Detection_Unit.v   # Load-use hazard stall logic
 │   │   ├── Control_Hazard_Unit.v     # Branch/jump flush logic
-│   │	└── Masking_Mux_CU            # Mask the Control Unit outputs when the Hazard Detection Unit wants to flush
+│   │	└── Masking_Mux_CU              # Mask the Control Unit outputs when the Hazard Detection Unit wants to flush
 │   │
 │   │
-│   ├── Adder.v			      # General Adder
-│   ├── Mux.v			      # 2x1 Multiplexer
+│   ├── Adder.v			                  # General Adder
+│   ├── Mux.v			                    # 2x1 Multiplexer
 │   │
 │   └── top_cpu.v                     # Top-level CPU integration module
 │
 ├── assembler/
-│   ├── assembler.py                  # Custom RISC-V Python assembler
+│   ├── assembler.py                       # Custom RISC-V Python assembler
 │   └── Instructions_To_Use_Assembler.txt  # Usage guide for the assembler
 │
 ├── test/
-│   ├── top_cpu_tb.v                  # Simulation testbench
+│   ├── top_cpu_tb.v                    # Simulation testbench
 │   ├── fibonacci.s                     # Example RISC-V assembly program
 │   ├── fibonacci.hex                   # Assembled machine code
-│   └── top_cpu.vcd                   # Simulation waveform output
+│   └── top_cpu.vcd                     # Simulation waveform output
 │
 ├── examples/
-│    └── factorial.s              # Additional example programs
+│    └── factorial.s                    # Additional example programs
 │
 └── Lab_Report.pdf
 
@@ -199,9 +199,9 @@ Even with forwarding, there is a **one-cycle gap** that cannot be bridged.
 
 When the Hazard Detection Unit identifies a load-use dependency, it **stalls the pipeline for exactly one cycle**:
 
-1. The **Program Counter (PC)** is frozen — it does not advance
-2. The **IF/ID pipeline register** is frozen — the fetched instruction is held
-3. A **NOP (bubble)** is inserted into the ID/EX register — a do-nothing instruction flows through EX
+1. The **Program Counter (PC)** is frozen - it does not advance
+2. The **IF/ID pipeline register** is frozen - the fetched instruction is held
+3. A **NOP (bubble)** is inserted into the ID/EX register - a do-nothing instruction flows through EX
 4. After one cycle, forwarding can now deliver the loaded value from MEM/WB to EX
 
 #### 📄 Implementation
@@ -212,7 +212,7 @@ src/hazard/Hazard_Detection_Unit.v
 
 #### 💡 Design Decision
 
-The stall is inserted **only when absolutely necessary** — specifically when `ID/EX.MemRead = 1` and the load destination matches a source register of the next instruction. This minimises the performance cost while guaranteeing correctness.
+The stall is inserted **only when absolutely necessary** - specifically when `ID/EX.MemRead = 1` and the load destination matches a source register of the next instruction. This minimises the performance cost while guaranteeing correctness.
 
 ---
 
@@ -346,9 +346,9 @@ python assembler/assembler.py test/program.s test/program.hex
 
 ### Prerequisites
 
-- [Icarus Verilog](http://iverilog.icarus.com/) — for Verilog compilation and simulation
-- [GTKWave](http://gtkwave.sourceforge.net/) — for waveform viewing
-- [Python 3](https://www.python.org/) — for running the assembler
+- [Icarus Verilog](http://iverilog.icarus.com/) - for Verilog compilation and simulation
+- [GTKWave](http://gtkwave.sourceforge.net/) - for waveform viewing
+- [Python 3](https://www.python.org/) - for running the assembler
 
 ### Step 1 — Clone the Repository
 
@@ -504,8 +504,8 @@ By studying this project, you will learn:
 
 **Group 04**
 
-E/17/083 - Mahela Ekanayake
-E/19/455 - Vidura Yashan
+- E/17/083 - Mahela Ekanayake
+- E/19/455 - Vidura Yashan
 
 CO502 - Advanced Computer Architecture Project  
 Department of Computer Engineering  
