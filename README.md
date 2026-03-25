@@ -54,15 +54,17 @@ riscv-pipelined-cpu/
 │   │   ├── Jtype.v                   # J-type (JAL, JALR)
 │   │   ├── muldiv.v                  # RV32M Multiply/Divide unit
 │   │   ├── Mux_3_by_1                # 3x1 Multiplexer
-│   │   └── LoadStoreUnit.v           # Address calculation for loads/stores
+│   │   ├── LoadStoreUnit.v           # Address calculation for loads/stores
+|   |   └── StoreConverter.v          # Byte/halfword store conversion
 │   │
 │   ├── memory/
 │   │   ├── Mem_cycle.v               # MEM stage top module
-│   │   ├── DataMemory.v              # Data memory (RAM)
-│   │   ├── LoadConverter.v           # Byte/halfword load conversion
-│   │   └── StoreConverter.v          # Byte/halfword store conversion
+│   │   └── DataMemory.v              # Data memory (RAM)
+│   │   
+│   │   
 │   │
 │   ├── writeback/
+|   |   ├── LoadConverter.v           # Byte/halfword load conversion
 │   │   └── WriteBack_Cycle.v         # WB stage: result selection & register write
 │   │
 │   ├── pipeline_registers/
