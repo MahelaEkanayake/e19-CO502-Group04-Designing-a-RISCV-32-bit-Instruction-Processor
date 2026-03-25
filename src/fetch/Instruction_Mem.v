@@ -8,7 +8,7 @@ module Instruction_Mem (
 
     // Load instructions from hex file at the start
     initial begin
-        $readmemh("instructions.hex", I_Mem); // Ensure this file exists in simulation directory
+        $readmemh("fibonacci.hex", I_Mem); // Ensure this file exists in simulation directory
     end
 
     always @(negedge clk) begin
