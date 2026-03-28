@@ -53,7 +53,7 @@ e19-CO502-Group04-Designing-a-RISCV-32-bit-Instruction-Processor/
 │   │   ├── Utype.v                   # U-type (LUI, AUIPC)
 │   │   ├── Jtype.v                   # J-type (JAL, JALR)
 │   │   ├── muldiv.v                  # RV32M Multiply/Divide unit
-│   │   ├── Mux_3_by_1                # 3x1 Multiplexer
+│   │   ├── Mux_3_by_1.v              # 3x1 Multiplexer
 │   │   ├── LoadStoreUnit.v           # Address calculation for loads/stores
 |   |   └── StoreConverter.v          # Byte/halfword store conversion
 │   │
